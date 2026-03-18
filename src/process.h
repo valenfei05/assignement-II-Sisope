@@ -13,6 +13,7 @@ struct Process {
     int remaining;
     bool started = false;
 
+    int st;
     int ct;
     int tat;
     int wt;
