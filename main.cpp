@@ -1,6 +1,7 @@
-#include "./utils.h"
-#include "./roundrobin.h"
-#include "./sjf.h"
+#include "./src/utils.h"
+#include "./src/roundrobin.h"
+#include "./src/sjf.h"
+#include "./src/psjf.h"
 
 int main(int argc, char* argv[]) {
 
@@ -27,6 +28,9 @@ int main(int argc, char* argv[]) {
     }
     else if (algoritmo == "-sjf") {
         runSjf(processes);
+    }
+    else if (algoritmo == "-psjf") {
+        runPsjf(processes);
     }
     else {
         cout << "Algoritmo no valido\n";
