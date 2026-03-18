@@ -32,11 +32,9 @@ int main(int argc, char* argv[]) {
     }
     else if (algoritmo == "-psjf") {
         runPsjf(processes);
-<<<<<<< HEAD
-=======
+    }
     else if (algoritmo == "-fcfs") {
         fcfs(processes);
->>>>>>> 09ebe56787d085f2ca3e977b1a48d9de51c67036
     }
     else {
         cout << "Algoritmo no valido\n";
