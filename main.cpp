@@ -1,6 +1,7 @@
 #include "./src/utils.h"
 #include "./src/roundrobin.h"
 #include "./src/sjf.h"
+#include "./src/psjf.h"
 #include "./src/fcfs.h"
 
 int main(int argc, char* argv[]) {
@@ -29,6 +30,8 @@ int main(int argc, char* argv[]) {
     else if (algoritmo == "-sjf") {
         runSjf(processes);
     }
+    else if (algoritmo == "-psjf") {
+        runPsjf(processes);
     else if (algoritmo == "-fcfs") {
         fcfs(processes);
     }
