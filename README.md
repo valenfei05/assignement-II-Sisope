@@ -7,6 +7,7 @@ Este programa simula algoritmos de planificación de CPU.
 Actualmente implementa:
 - Round Robin (RR)
 - Shortest Job First (SJF)
+- First Come Fist Served (FCFS)
 
 El programa lee procesos desde un archivo `.txt`, ejecuta el algoritmo seleccionado y muestra:
 - Diagrama de ejecución
@@ -29,8 +30,10 @@ El programa lee procesos desde un archivo `.txt`, ejecuta el algoritmo seleccion
 ├── utils.cpp
 ├── roundrobin.h
 ├── roundrobin.cpp
+├── fcfs.h
+├── fcfs.cpp
 ├── sjf.h
-   └── sjf.cpp
+└── sjf.cpp
 ```
 
 ---
@@ -93,10 +96,24 @@ Ejemplo:
 
 ---
 
+### FCFS
+
+```
+./scheduler -fcfs archivo.txt
+```
+
+Ejemplo:
+
+```
+./scheduler -fcfs inputs/input1.txt
+```
+
+---
+
 ## Funcionamiento
 
 1. El programa lee el archivo con los procesos
-2. Según el parámetro (`-rr` o `-sjf`), ejecuta el algoritmo
+2. Según el parámetro (`-rr`, `-sjf` o `-fcfs`), ejecuta el algoritmo
 3. Calcula:
    - CT (Completion Time)
    - TAT (Turnaround Time)

@@ -2,13 +2,14 @@
 #include "./src/roundrobin.h"
 #include "./src/sjf.h"
 #include "./src/psjf.h"
+#include "./src/fcfs.h"
 
 int main(int argc, char* argv[]) {
 
     if (argc < 3) {
         cout << "Uso:\n";
         cout << "./scheduler -algoritmo archivo.txt [quantum]\n";
-        cout << "Algoritmos: -rr -sjf\n";
+        cout << "Algoritmos: -rr -sjf -fcfs\n";
         return 1;
     }
 
@@ -31,6 +32,8 @@ int main(int argc, char* argv[]) {
     }
     else if (algoritmo == "-psjf") {
         runPsjf(processes);
+    else if (algoritmo == "-fcfs") {
+        fcfs(processes);
     }
     else {
         cout << "Algoritmo no valido\n";
