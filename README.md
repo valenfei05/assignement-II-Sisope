@@ -1,5 +1,5 @@
 # CPU Scheduling Simulator
-# Valentina Feijoo, Juan Carlos Díaz, Nicolas Zapata y Santiago Guevara
+## Valentina Feijoo, Juan Carlos Díaz, Nicolas Zapata y Santiago Guevara
 
 ## Descripción
 
