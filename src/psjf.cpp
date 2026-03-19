@@ -106,7 +106,7 @@ void runPsjf(vector<Process>& processes) {
     cout << "---------------------------------------------\n";
     cout << "ID\tAT\tBT\tCT\tTAT\tWT\tRT\n";
 
-    double avgWT = 0, avgTAT = 0, avgRT = 0;
+    double avgCT = 0, avgWT = 0, avgTAT = 0, avgRT = 0;
 
     for (auto& p : processes) {
         cout << p.id << "\t"
@@ -117,18 +117,21 @@ void runPsjf(vector<Process>& processes) {
              << p.wt << "\t"
              << p.rt << "\n";
 
+        avgCT += p.ct;
         avgWT += p.wt;
         avgTAT += p.tat;
         avgRT += p.rt;
     }
 
+    avgCT /= n;
     avgWT /= n;
     avgTAT /= n;
     avgRT /= n;
 
     cout << "---------------------------------------------\n";
-    cout << "AVG\t-\t-\t-\t"
+    cout << "AVG\t-\t-\t"
          << fixed << setprecision(2)
+         << avgCT << "\t"
          << avgTAT << "\t"
          << avgWT << "\t"
          << avgRT << "\n";

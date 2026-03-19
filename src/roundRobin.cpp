@@ -91,7 +91,7 @@ void RoundRobin(vector<Process> p, int quantum) {
     cout << "---------------------------------------------\n";
     cout << "ID\tAT\tBT\tCT\tTAT\tWT\tRT\n";
 
-    double avgWT = 0, avgTAT = 0, avgRT = 0;
+    double avgCT = 0, avgWT = 0, avgTAT = 0, avgRT = 0;
 
     for (auto &proc : p) {
         cout << proc.id << "\t"
@@ -102,18 +102,21 @@ void RoundRobin(vector<Process> p, int quantum) {
              << proc.wt << "\t"
              << proc.rt << "\n";
 
+        avgCT += proc.ct;
         avgWT += proc.wt;
         avgTAT += proc.tat;
         avgRT += proc.rt;
     }
 
+    avgCT /= n;
     avgWT /= n;
     avgTAT /= n;
     avgRT /= n;
 
     cout << "---------------------------------------------\n";
-    cout << "AVG\t-\t-\t-\t"
+    cout << "AVG\t-\t-\t"
          << fixed << setprecision(2)
+         << avgCT << "\t"
          << avgTAT << "\t"
          << avgWT << "\t"
          << avgRT << "\n";

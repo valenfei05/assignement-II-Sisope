@@ -8,6 +8,7 @@ Actualmente implementa:
 - Round Robin (RR)
 - Shortest Job First (SJF)
 - First Come Fist Served (FCFS)
+- Preemptive Shortest Job First (PSJF)
 
 El programa lee procesos desde un archivo `.txt`, ejecuta el algoritmo seleccionado y muestra:
 - Diagrama de ejecución
@@ -24,6 +25,7 @@ El programa lee procesos desde un archivo `.txt`, ejecuta el algoritmo seleccion
 ├── inputs/
 │   ├── input1.txt
 │   ├── input2.txt
+    ├── input3.txt
 └── src/
 ├── process.h
 ├── utils.h
@@ -33,7 +35,9 @@ El programa lee procesos desde un archivo `.txt`, ejecuta el algoritmo seleccion
 ├── fcfs.h
 ├── fcfs.cpp
 ├── sjf.h
-└── sjf.cpp
+├── sjf.cpp
+├── psjf.h
+└── psjf.cpp
 ```
 
 ---
@@ -95,6 +99,19 @@ Ejemplo:
 ```
 
 ---
+### PSJF
+
+```
+./scheduler -psjf archivo.txt
+```
+
+Ejemplo:
+
+```
+./scheduler -psjf inputs/input1.txt
+```
+
+---
 
 ### FCFS
 
@@ -113,7 +130,7 @@ Ejemplo:
 ## Funcionamiento
 
 1. El programa lee el archivo con los procesos
-2. Según el parámetro (`-rr`, `-sjf` o `-fcfs`), ejecuta el algoritmo
+2. Según el parámetro (`-rr`, `-sjf`, `-psjf` o `-fcfs`), ejecuta el algoritmo
 3. Calcula:
    - CT (Completion Time)
    - TAT (Turnaround Time)
